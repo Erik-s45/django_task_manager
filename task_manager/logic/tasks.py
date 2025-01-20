@@ -6,7 +6,7 @@ from .models import Task
 
 
 @shared_task()
-def process_task(task_id):
+def process_task(task_id: int):
     """Функция выполнения задач в celery и обновления статусов выполнения."""
     task = Task.objects.get(pk=task_id)
     task.status = 'in_progress'
@@ -28,12 +28,12 @@ def process_task(task_id):
     task.save()
 
 
-def add(a, b):
+def add(a: int, b: int) -> int:
     """Функция сложения для выполнения в celery."""
     return a + b
 
 
-def wait(s):
+def wait(s: int) -> str:
     """Функция отсчета секунд для выполнения в celery."""
     time.sleep(s)
     return f'Отсчет окончен: {s} секунд'
