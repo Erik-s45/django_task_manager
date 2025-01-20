@@ -35,7 +35,7 @@ class TaskView(ListCreateAPIView):
         max_task_amount = 5
         task_amount = Task.objects.filter(user=self.request.user, status__in=['scheduled', 'in_progress']).count()
         if task_amount >= max_task_amount:
-            return Response(data={'message': 'Максимальное количество активных задач: 5.'},
+            return Response(data={'message': f'Максимальное количество активных задач: {max_task_amount}.'},
                             status=status.HTTP_400_BAD_REQUEST)
 
         # Проверка полученных данных и сохранение задачи в базе
