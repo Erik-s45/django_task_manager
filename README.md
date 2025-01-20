@@ -2,14 +2,15 @@
 
 ## Установка
 
-1. Создайте виртуальное окружение: `python -m venv venv`
-2. Активируйте виртуальное окружение:
-- На Windows: `venv\Scripts\activate`
-- На macOS и Linux: `source venv/bin/activate`
-1. Установите зависимости: `pip install -r requirements.txt`
-2. Запустите Redis: `redis-server`
-3. Запустите Celery: `celery -A task_manager worker --pool=solo -l info`
-4. Запустите сервер: `python manage.py runserver`
+1. Склонируйте репозиторий `git clone https://github.com/Erik-s45/django_task_manager`
+2. Создайте виртуальное окружение: `python -m venv venv`
+3. Активируйте виртуальное окружение:
+   - На Windows: `venv\Scripts\activate`
+   - На macOS и Linux: `source venv/bin/activate`
+4. Установите зависимости: `pip install -r requirements.txt`
+5. Запустите Redis: `redis-server`
+6. Запустите Celery: `celery -A task_manager worker --pool=solo -l info`
+7. Запустите сервер: `python manage.py runserver`
 
 ## Эндпоинты
 
